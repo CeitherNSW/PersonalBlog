@@ -1,14 +1,16 @@
-import './App.css';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Home from './pages/homePage.js';
+import LoginPage from './pages/loginPage.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Blog Management
-        </p>
-      </header>
-    </div>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route patn="/home/dashboard" element={<Home />} />
+      </Routes>
   );
 }
 
